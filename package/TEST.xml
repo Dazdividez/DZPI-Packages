@@ -2,4 +2,11 @@
 <package>
   <title>TEST</title>
   <repo>https://github.com/Anuken/Mindustry/archive/refs/tags/v149.zip</repo>
+  <versions>
+    <latest-version>1.0</latest-version>
+    <version>
+      <title>1.0</title>
+      <repo></repo>
+    </version>
+  </versions>
 </package>
