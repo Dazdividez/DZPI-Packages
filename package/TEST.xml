@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
   <title>TEST</title>
-  <repo>https://github.com/Anuken/Mindustry/releases/download/v149/Mindustry.jar</repo>
+  <repo>https://github.com/Anuken/Mindustry/archive/refs/tags/v149.zip</repo>
 </package>
