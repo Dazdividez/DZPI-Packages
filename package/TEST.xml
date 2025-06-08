@@ -2,7 +2,6 @@
 <package>
   <title>TEST</title>
   <latest-version>1.0</latest-version>
-  <versions>
     <version>
       <title>1.0</title>
       <repo>https://github.com/Anuken/Mindustry/archive/refs/tags/v149.zip</repo>
@@ -11,5 +10,4 @@
       <title></title>
       <repo></repo>
     </version>
-  </versions>
 </package>
