@@ -5,6 +5,7 @@
     <version>
       <title>1.0</title>
       <repo>https://github.com/TimeStop34/DZPI-Packages/releases/download/Test/dzpi.zip</repo>
+      <path-inclded></path-included>
     </version>
     <version>
       <title></title>
