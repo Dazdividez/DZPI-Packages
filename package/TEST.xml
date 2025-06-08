@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package>
   <title>TEST</title>
+  <latest-version>1.0</latest-version>
   <versions>
-    <latest-version>1.0</latest-version>
     <version>
       <title>1.0</title>
       <repo>https://github.com/Anuken/Mindustry/archive/refs/tags/v149.zip</repo>
