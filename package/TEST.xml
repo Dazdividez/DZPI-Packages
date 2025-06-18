@@ -1,14 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<package>
-  <title>TEST</title>
-  <latest-version>1.0</latest-version>
-    <version>
-      <title>1.0</title>
-      <repo>https://github.com/TimeStop34/DZPI-Packages/releases/download/Test/dzpi.zip</repo>
-      <pathIncluded></pathIncluded>
+<package id="myapp" type="app|lib|meta">
+  <metadata>
+    <name>MyApp</name>
+    <developer>Dazdividez</developer>
+    <license>MIT</license>
+    <icon>https://.../icon.png</icon>
+    <screenshots>...</screenshots>
+  </metadata>
+
+  <versions>
+    <version num="1.2.3" status="stable|beta">
+      <zip url="https://.../myapp_v1.2.3.zip" 
+           size="15MB"
+           hash="sha256:a1b2...">
+        <gpg key-id="D89F3F72" signature="base64..."/>
+      </zip>
+      <requires>
+        <dep xml-file="common-lib.xml" version=">=2.0"/>
+        <syslib name="libgtk-3.so.0"/>
+      </requires>
     </version>
-    <version>
-      <title></title>
-      <repo></repo>
-    </version>
+  </versions>
 </package>
