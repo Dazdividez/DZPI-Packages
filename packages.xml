@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<packages>
-  <package>
-    <title>TEST</title>
-    <xml-file>TEST.xml</xml-file>
-  </package>
-  <package>
-    <title>TEST2</title>
-    <xml-file>TEST2.xml</xml-file>
-  </package>
-</packages>
+<repository updated="2024-07-15T12:00:00Z">
+  <package-list>
+    <package id="myapp" xml-file="packages/myapp.xml" category="dev/gui"/>
+    <package id="common-lib" xml-file="packages/common-lib.xml" category="lib"/>
+  </package-list>
+  
+  <!-- Статистика для быстрой проверки обновлений -->
+  <stats>
+    <total-packages>42</total-packages>
+    <last-update>packages/common-lib.xml</last-update>
+  </stats>
+</repository>
