@@ -1,12 +1,55 @@
-<repository updated="2024-07-15T12:00:00Z">
+<?xml version="1.0" encoding="UTF-8"?>
+<repository updated="2024-07-20T14:30:00Z">
+  <!-- Подпись репозитория (GPG) -->
+  <signature key-id="D89F3F72">BASE64_GPG_SIGNATURE_HERE</signature>
+
+  <!-- Общая информация -->
+  <metadata>
+    <name>Dazdividez Package Repository</name>
+    <maintainer>team@dazdividez.ru</maintainer>
+    <last-update>2024-07-20</last-update>
+  </metadata>
+
+  <!-- Список всех пакетов -->
   <package-list>
-    <package id="myapp" xml-file="packages/TEST.xml" category="dev/gui"/>
-    <package id="common-lib" xml-file="packages/common-lib.xml" category="lib"/>
+    <!-- Пример GUI-приложения -->
+    <package id="dzpi-testapp" category="gui/development">
+      <xml-file>packages/dzpi-testapp.xml</xml-file>
+      <description>Тестовое приложение DZPI</description>
+      <tags>
+        <tag>example</tag>
+        <tag>gui</tag>
+      </tags>
+    </package>
+
+    <!-- Пример системной библиотеки -->
+    <package id="dzpi-corelib" category="system/library">
+      <xml-file>packages/dzpi-corelib.xml</xml-file>
+      <description>Базовые библиотеки DZPI</description>
+    </package>
   </package-list>
-  
-  <!-- Статистика для быстрой проверки обновлений -->
+
+  <!-- Статистика и метрики -->
   <stats>
     <total-packages>42</total-packages>
-    <last-update>packages/common-lib.xml</last-update>
+    <last-added>dzpi-testapp</last-added>
+    <downloads>
+      <total>1250</total>
+      <last-month>340</last-month>
+    </downloads>
   </stats>
+
+  <!-- Настройки репозитория -->
+  <config>
+    <mirrors>
+      <mirror priority="1">https://mirror1.dazdividez.ru/repo</mirror>
+      <mirror priority="2">https://github.com/TimeStop34/DZPI-Packages</mirror>
+    </mirrors>
+    <compatibility>
+      <os>linux</os>
+      <arch>x86_64</arch>
+      <arch>arm64</arch>
+      <min-dzpi-version>1.2.0</min-dzpi-version>
+    </compatibility>
+  </config>
 </repository>
