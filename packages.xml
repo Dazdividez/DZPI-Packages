@@ -1,6 +1,6 @@
 <repository updated="2024-07-15T12:00:00Z">
   <package-list>
-    <package id="myapp" xml-file="packages/myapp.xml" category="dev/gui"/>
+    <package id="myapp" xml-file="packages/TEST.xml" category="dev/gui"/>
     <package id="common-lib" xml-file="packages/common-lib.xml" category="lib"/>
   </package-list>
   
