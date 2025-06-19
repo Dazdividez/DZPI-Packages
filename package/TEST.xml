@@ -8,7 +8,7 @@
         <!-- Linux -->
         <artifact os="linux" arch="x86_64">
           <pkg type="zip" url="https://.../superapp-linux-x64.zip"/>
-          <appimage url="https://.../superapp.AppImage"/>
+          <pkg type="appimage" url="https://.../superapp.AppImage"/>
           <commands>
             <install>make install</install>
             <uninstall>make uninstall</uninstall>
