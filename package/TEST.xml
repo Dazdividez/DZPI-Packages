@@ -7,7 +7,7 @@
       <artifacts>
         <!-- Linux -->
         <artifact os="linux" arch="x86_64">
-          <zip url="https://.../superapp-linux-x64.zip"/>
+          <pkg type="zip" url="https://.../superapp-linux-x64.zip"/>
           <appimage url="https://.../superapp.AppImage"/>
           <commands>
             <install>make install</install>
@@ -17,8 +17,8 @@
         
         <!-- Windows -->
         <artifact os="windows" arch="x86_64">
-          <msi url="https://.../superapp.msi"/>
-          <zip url="https://.../superapp-win64.zip"/>
+          <pkg type="msi" url="https://.../superapp.msi"/>
+          <pkg type="zip" url="https://.../superapp-win64.zip"/>
           <registry-keys>
             <key path="HKCU\Software\SuperApp" name="InstallDir"/>
           </registry-keys>
@@ -26,7 +26,7 @@
         
         <!-- macOS Universal Binary -->
         <artifact os="macos" arch="universal">
-          <dmg url="https://.../superapp.dmg"/>
+          <pkg type="brew" url="https://.../superapp.dmg"/>
           <brew>dazdividez/superapp</brew> <!-- Формула Homebrew -->
         </artifact>
       </artifacts>
