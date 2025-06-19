@@ -1,63 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package id="dzpi-testapp" type="gui">
-  <metadata>
-    <name>DZPI Test App</name>
-    <developer>Dazdividez Team</developer>
-    <license>MIT</license>
-    <icon>https://dazdividez.ru/icons/testapp.png</icon>
-    <screenshots>
-      <screenshot>https://example.com/screen1.jpg</screenshot>
-    </screenshots>
-  </metadata>
-
+<package id="superapp">
+  <!-- 3. Мультиплатформенные версии -->
   <versions>
-    <!-- Стабильная версия -->
-    <version num="1.2.0" status="stable" release-date="2024-07-15">
-      <zip 
-        url="https://dazdividez.ru/packages/testapp-1.2.0.zip"
-        size="15MB"
-        hash="sha256:a1b2c3d4e5f6...">
-        <gpg key-id="D89F3F72" signature="BASE64_SIGN"/>
-      </zip>
+    <version num="2.5.0">
+      <!-- Варианты для разных ОС -->
+      <artifacts>
+        <!-- Linux -->
+        <artifact os="linux" arch="x86_64">
+          <zip url="https://.../superapp-linux-x64.zip"/>
+          <appimage url="https://.../superapp.AppImage"/>
+          <commands>
+            <install>make install</install>
+            <uninstall>make uninstall</uninstall>
+          </commands>
+        </artifact>
+        
+        <!-- Windows -->
+        <artifact os="windows" arch="x86_64">
+          <msi url="https://.../superapp.msi"/>
+          <zip url="https://.../superapp-win64.zip"/>
+          <registry-keys>
+            <key path="HKCU\Software\SuperApp" name="InstallDir"/>
+          </registry-keys>
+        </artifact>
+        
+        <!-- macOS Universal Binary -->
+        <artifact os="macos" arch="universal">
+          <dmg url="https://.../superapp.dmg"/>
+          <brew>dazdividez/superapp</brew> <!-- Формула Homebrew -->
+        </artifact>
+      </artifacts>
       
-      <requires>
-        <dep xml-file="packages/dzpi-corelib.xml" version=">=2.0"/>
-        <syslib name="libgtk-3.so.0"/>
-      </requires>
-
-      <changelog lang="ru">
-        <![CDATA[
-        <ul>
-          <li>Добавлена поддержка темной темы</li>
-          <li>Исправлены утечки памяти</li>
-        </ul>
-        ]]>
-      </changelog>
-    </version>
-
-    <!-- Бета-версия -->
-    <version num="2.0.0-beta" status="beta">
-      <zip url="https://.../testapp-2.0.0-beta.zip"/>
+      <!-- 4. Кроссплатформенные зависимости -->
+      <dependencies>
+        <cross-platform>
+          <runtime name=".NET" version="8.0" />
+          <runtime name="Java" min-version="11" />
+        </cross-platform>
+        
+        <os-specific>
+          <linux>
+            <lib name="libgtk-3.so.0"/>
+            <package manager="apt" name="libssl-dev"/>
+          </linux>
+          <windows>
+            <dll name="vcruntime140.dll"/>
+          </windows>
+        </os-specific>
+      </dependencies>
     </version>
   </versions>
 
-  <!-- Интеграция с системой -->
+  <!-- 5. Платформо-специфичные настройки -->
   <integration>
-    <desktop-entries>
-      <entry name="DZPI Test" exec="/opt/dzpi/testapp/run" icon="testapp-icon"/>
-    </desktop-entries>
+    <!-- Linux -->
+    <linux>
+      <systemd>
+        <service name="superappd" exec="/opt/superapp/daemon"/>
+      </systemd>
+      <apparmor profile="superapp"/>
+    </linux>
     
-    <systemd>
-      <service name="testapp-daemon" exec="/opt/dzpi/testapp/daemon"/>
-    </systemd>
+    <!-- Windows -->
+    <windows>
+      <wix-installer id="superapp.wxs"/> <!-- WiX-конфиг -->
+      <autostart>
+        <task name="SuperAppBackground"/>
+      </autostart>
+    </windows>
+    
+    <!-- macOS -->
+    <macos>
+      <plist>com.dazdividez.superapp.plist</plist> <!-- LaunchAgent -->
+      <signature team-id="ABCD1234"/> <!-- Apple Developer Team ID -->
+    </macos>
   </integration>
-
-  <!-- Разрешения -->
-  <permissions>
-    <network>yes</network>
-    <filesystem>
-      <read>/home</read>
-      <write>/var/log/testapp</write>
-    </filesystem>
-  </permissions>
 </package>
