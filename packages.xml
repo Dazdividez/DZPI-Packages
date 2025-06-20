@@ -13,7 +13,7 @@
   <package-list>
     <!-- Пример GUI-приложения -->
     <package id="superapp" category="gui/development">
-      <xml-file>packages/dzpi-testapp.xml</xml-file>
+      <xml-file>dzpi-testapp.xml</xml-file>
       <description>Тестовое приложение DZPI</description>
       <tags>
         <tag>example</tag>
@@ -23,7 +23,7 @@
 
     <!-- Пример системной библиотеки -->
     <package id="dzpi-corelib" category="system/library">
-      <xml-file>packages/dzpi-corelib.xml</xml-file>
+      <xml-file>dzpi-corelib.xml</xml-file>
       <description>Базовые библиотеки DZPI</description>
     </package>
   </package-list>
