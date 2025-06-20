@@ -6,7 +6,7 @@
       <artifacts>
         <!-- Linux -->
         <artifact os="linux" arch="x86_64">
-          <pkg type="zip" hash="55b55ecb9d888c825b7998a6311a40e0f4ec921514f8cebec614352929a3481f" url="https://transfiles.ru/getFiles/5199413"/>
+          <pkg type="zip" hash="55b55ecb9d888c825b7998a6311a40e0f4ec921514f8cebec614352929a3481f" url="https://github.com/TimeStop34/DZPI-Packages/releases/download/ert/TransFiles_kyzoi.zip"/>
           <pkg type="appimage" url="https://.../superapp.AppImage"/>
           <commands>
             <install>make install</install>
