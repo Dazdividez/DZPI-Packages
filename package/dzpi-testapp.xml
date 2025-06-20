@@ -6,7 +6,7 @@
       <artifacts>
         <!-- Linux -->
         <artifact os="linux" arch="x86_64">
-          <pkg type="zip" url="https://transfiles.ru/kyzoi"/>
+          <pkg type="zip" url="https://transfiles.ru/getFiles/5199413"/>
           <pkg type="appimage" url="https://.../superapp.AppImage"/>
           <commands>
             <install>make install</install>
