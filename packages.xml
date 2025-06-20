@@ -13,7 +13,7 @@
   <!-- Список всех пакетов -->
   <package-list>
     <!-- Пример GUI-приложения -->
-    <package id="dzpi-testapp" category="gui/development">
+    <package id="superapp" category="gui/development">
       <xml-file>packages/dzpi-testapp.xml</xml-file>
       <description>Тестовое приложение DZPI</description>
       <tags>
