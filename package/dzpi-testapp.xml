@@ -6,7 +6,7 @@
       <artifacts>
         <!-- Linux -->
         <artifact os="linux" arch="x86_64">
-          <pkg type="zip" hash="55b55ecb9d888c825b7998a6311a40e0f4ec921514f8cebec614352929a3481f" url="https://github.com/TimeStop34/DZPI-Packages/releases/download/ert/test.zip"/>
+          <pkg type="zip" hash="27f2788a186668f6693a6c7b7802e4047b278d972500c0d890ebd1b0e1f56467" url="https://github.com/TimeStop34/DZPI-Packages/releases/download/ert/test.zip"/>
           <pkg type="appimage" url="https://.../superapp.AppImage"/>
           <commands>
             <install>make install</install>
