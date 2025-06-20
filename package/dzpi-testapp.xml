@@ -6,7 +6,7 @@
       <artifacts>
         <!-- Linux -->
         <artifact os="linux" arch="x86_64">
-          <pkg type="zip" url="https://transfiles.ru/getFiles/5199413"/>
+          <pkg type="zip" hash="ea8fac7c65fb589b0d53560f5251f74f9e9b243478dcb6b3ea79b5e36449c8d9" url="https://transfiles.ru/getFiles/5199413"/>
           <pkg type="appimage" url="https://.../superapp.AppImage"/>
           <commands>
             <install>make install</install>
