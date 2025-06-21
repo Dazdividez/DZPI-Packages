@@ -47,31 +47,31 @@
           </windows>
         </os-specific>
       </dependencies>
+      
+        <!-- 5. Платформо-специфичные настройки -->
+      <integration>
+        <!-- Linux -->
+        <linux>
+          <systemd>
+            <service name="superappd" exec="/opt/superapp/daemon"/>
+          </systemd>
+          <apparmor profile="superapp"/>
+        </linux>
+        
+        <!-- Windows -->
+        <windows>
+          <wix-installer id="superapp.wxs"/> <!-- WiX-конфиг -->
+          <autostart>
+            <task name="SuperAppBackground"/>
+          </autostart>
+        </windows>
+        
+        <!-- macOS -->
+        <macos>
+          <plist>com.dazdividez.superapp.plist</plist> <!-- LaunchAgent -->
+          <signature team-id="ABCD1234"/> <!-- Apple Developer Team ID -->
+        </macos>
+      </integration>
     </version>
   </versions>
-
-  <!-- 5. Платформо-специфичные настройки -->
-  <integration>
-    <!-- Linux -->
-    <linux>
-      <systemd>
-        <service name="superappd" exec="/opt/superapp/daemon"/>
-      </systemd>
-      <apparmor profile="superapp"/>
-    </linux>
-    
-    <!-- Windows -->
-    <windows>
-      <wix-installer id="superapp.wxs"/> <!-- WiX-конфиг -->
-      <autostart>
-        <task name="SuperAppBackground"/>
-      </autostart>
-    </windows>
-    
-    <!-- macOS -->
-    <macos>
-      <plist>com.dazdividez.superapp.plist</plist> <!-- LaunchAgent -->
-      <signature team-id="ABCD1234"/> <!-- Apple Developer Team ID -->
-    </macos>
-  </integration>
 </package>
