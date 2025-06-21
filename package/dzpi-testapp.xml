@@ -30,22 +30,15 @@
         </artifact>
       </artifacts>
       
-      <!-- 4. Кроссплатформенные зависимости -->
+      <!-- 4. Зависимости -->
       <dependencies>
-        <cross-platform>
-          <runtime name=".NET" version="8.0" />
-          <runtime name="Java" min-version="11" />
-        </cross-platform>
+          <dependency os="cross-platform" type="runtime" name=".NET" version="8.0" />
+          <dependency os="cross-platform" type="runtime" name="Java" min-version="11" />
         
-        <os-specific>
-          <linux>
-            <lib name="libgtk-3.so.0"/>
-            <package manager="apt" name="libssl-dev"/>
-          </linux>
-          <windows>
-            <dll name="vcruntime140.dll"/>
-          </windows>
-        </os-specific>
+          <dependency os="linux" type="lib" name="libgtk-3.so.0"/>
+          <dependency os="linux" type="package" name="libssl-dev"/>
+        
+          <dependency os="windows" type="dll" name="vcruntime140.dll"/>
       </dependencies>
       
         <!-- 5. Платформо-специфичные настройки -->
