@@ -32,13 +32,12 @@
       
       <!-- 4. Зависимости -->
       <dependencies>
-          <dependency os="cross-platform" type="runtime" name=".NET" version="8.0" />
-          <dependency os="cross-platform" type="runtime" name="Java" min-version="11" />
+          <dependency platform="cross" type="runtime" name=".NET" version="8.0" />
+          <dependency platform="cross" type="runtime" name="Java" version="11+" />
         
-          <dependency os="linux" type="lib" name="libgtk-3.so.0"/>
-          <dependency os="linux" type="package" name="libssl-dev"/>
+          <dependency platform="linux" type="library" name="libgtk-3.so.0"/>
         
-          <dependency os="windows" type="dll" name="vcruntime140.dll"/>
+          <dependency platform="windows" type="library" name="vcruntime140.dll"/>
       </dependencies>
       
         <!-- 5. Платформо-специфичные настройки -->
