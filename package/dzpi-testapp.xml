@@ -17,7 +17,7 @@
         <!-- Windows -->
         <artifact os="windows" arch="x86-x64">
           <pkg type="msi" hash="" url="https://.../superapp.msi"/>
-          <pkg type="zip" hash=27f2788a186668f6693a6c7b7802e4047b278d972500c0d890ebd1b0e1f56467"" url="https://github.com/TimeStop34/DZPI-Packages/releases/download/ert/test.zip"/>
+          <pkg type="zip" hash="27f2788a186668f6693a6c7b7802e4047b278d972500c0d890ebd1b0e1f56467" url="https://github.com/TimeStop34/DZPI-Packages/releases/download/ert/test.zip"/>
           <registry-keys>
             <key path="HKCU\Software\SuperApp" name="InstallDir"/>
           </registry-keys>
