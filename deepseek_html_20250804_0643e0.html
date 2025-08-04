@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dazdividez - Вперед в будущее IT технологий и инженерных достижений</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #27ae60; /* Изменен на зеленый */
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --success: #2ecc71;
+            --green-light: #d5f5e3;
+            --green-dark: #1d8348;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--green-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.03)" points="0,100 100,0 100,100"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        /* Green Highlight */
+        .green-highlight {
+            background-color: var(--green-light);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        
+        /* About Section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px solid var(--secondary);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Sectors Section */
+        .sectors {
+            background-color: var(--light);
+        }
+        
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .sector-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .sector-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .sector-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .sector-content {
+            padding: 2rem;
+        }
+        
+        .sector-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .sector-content p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .sector-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.2rem;
+        }
+        
+        .sector-content ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .sector-content ul li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .manager {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .manager-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+            border: 3px solid var(--secondary);
+        }
+        
+        .manager-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .manager-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .manager-info p {
+            margin: 0;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        /* Products Section */
+        .products-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--secondary);
+        }
+        
+        .product-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            background: #f9f9f9;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--secondary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .product-content {
+            padding: 1.5rem;
+        }
+        
+        .product-category {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+        
+        .product-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            height: 60px;
+            overflow: hidden;
+        }
+        
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .add-to-cart {
+            background: var(--secondary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background: var(--green-dark);
+            transform: scale(1.1);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+        }
+        
+        .contact .section-title h2 {
+            color: white;
+        }
+        
+        .contact .section-title p {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .contact-details {
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            background: var(--secondary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-text a:hover {
+            color: var(--secondary);
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Green Elements */
+        .green-banner {
+            background: linear-gradient(90deg, var(--secondary), var(--green-dark));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 10px;
+        }
+        
+        .green-banner h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .eco-badge {
+            display: inline-block;
+            background: var(--green-light);
+            color: var(--green-dark);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">D</div>
+                <h1>Dazdi<span>videz</span></h1>
+            </div>
+            
+            <nav>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">О компании</a></li>
+                    <li><a href="#sectors">Сектора</a></li>
+                    <li><a href="#products">Магазин</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-buttons">
+                <a href="#contact" class="btn btn-outline">Связаться</a>
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-shopping-cart"></i> Корзина
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h2>Вперед в будущее IT технологий и инженерных достижений</h2>
+            <p>Разработка инновационных решений для цифрового мира и инженерных задач</p>
+            <div class="hero-buttons">
+                <a href="#sectors" class="btn btn-primary">Наши сектора</a>
+                <a href="#products" class="btn btn-outline">Перейти в магазин</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Green Banner -->
+    <div class="container">
+        <div class="green-banner">
+            <h3>Экологичные и устойчивые технологии</h3>
+            <p>Мы создаем решения, которые не только эффективны, но и экологически безопасны</p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>О компании</h2>
+                <p>Dazdividez - инновационная компания, специализирующаяся на разработке IT-решений и инженерных проектах. Мы создаем будущее уже сегодня.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Наша миссия</h3>
+                    <p>Мы стремимся создавать передовые технологии и инженерные решения, которые изменят мир к лучшему. Наша команда экспертов работает над проектами, которые определяют будущее цифровой трансформации и инженерного прогресса.</p>
+                    
+                    <div class="green-highlight">
+                        <p><i class="fas fa-leaf" style="color: var(--secondary); margin-right: 10px;"></i> Наши решения не только технологичны, но и экологичны. Мы придерживаемся принципов устойчивого развития во всех проектах.</p>
+                    </div>
+                    
+                    <p>Основанная в 2015 году, компания Dazdividez быстро завоевала репутацию надежного партнера для сложных IT и инженерных задач. Наши решения используются компаниями по всему миру.</p>
+                    <p>Мы объединяем лучшие практики разработки программного обеспечения с передовыми инженерными подходами для создания комплексных решений, которые превосходят ожидания клиентов.</p>
+                    <a href="#contact" class="btn btn-primary">Связаться с нами</a>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Офис Dazdividez">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectors Section -->
+    <section class="section sectors" id="sectors">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши сектора</h2>
+                <p>Dazdividez объединяет два ключевых направления, обеспечивая комплексный подход к решению технологических задач</p>
+            </div>
+            
+            <div class="sectors-grid">
+                <!-- IT Sector -->
+                <div class="sector-card">
+                    <div class="sector-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                    </div>
+                    <div class="sector-content">
+                        <h3>IT Сектор</h3>
+                        <p>Разработка программного обеспечения, веб-приложений, мобильных решений и систем искусственного интеллекта. Мы создаем цифровые продукты, которые решают сложные бизнес-задачи и улучшают жизнь пользователей.</p>
+                        <ul>
+                            <li>Веб-разработка и дизайн</li>
+                            <li>Мобильные приложения</li>
+                            <li>Искусственный интеллект</li>
+                            <li>Кибербезопасность</li>
+                            <li>Облачные решения</li>
+                        </ul>
+                        
+                        <div class="manager">
+                            <div class="manager-photo">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ярослав Кострюков">
+                            </div>
+                            <div class="manager-info">
+                                <h4>Ярослав Кострюков</h4>
+                                <p>Главный IT Сектора</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Engineering Sector -->
+                <div class="sector-card">
+                    <div class="sector-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                    </div>
+                    <div class="sector-content">
+                        <h3>Инженерный Сектор</h3>
+                        <p>Проектирование и разработка инновационных инженерных решений в области робототехники, автоматизации, IoT и промышленного дизайна. Наши инженеры создают продукты, которые меняют представление о возможном.</p>
+                        <ul>
+                            <li>Промышленная автоматизация</li>
+                            <li>Робототехника</li>
+                            <li>Интернет вещей (IoT)</li>
+                            <li>3D-печать и прототипирование</li>
+                            <li>Энергоэффективные решения</li>
+                        </ul>
+                        
+                        <div class="manager">
+                            <div class="manager-photo">
+                                <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Храмов Тимофей">
+                            </div>
+                            <div class="manager-info">
+                                <h4>Храмов Тимофей</h4>
+                                <p>Главный Инженерного Сектора</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Магазин решений</h2>
+                <p>Приобретайте готовые IT-решения и инженерные продукты, разработанные нашей командой</p>
+            </div>
+            
+            <div class="products-filter">
+                <button class="filter-btn active">Все продукты</button>
+                <button class="filter-btn">IT решения</button>
+                <button class="filter-btn">Инженерные продукты</button>
+                <button class="filter-btn">Эко-технологии</button>
+                <button class="filter-btn">Новинки</button>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Корпоративная CRM система">
+                        <div class="product-badge">IT решение</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Программное обеспечение</div>
+                        <h3 class="product-title">Корпоративная CRM система</h3>
+                        <p class="product-description">Комплексное решение для управления взаимоотношениями с клиентами с аналитикой и интеграциями</p>
+                        <div class="product-footer">
+                            <div class="product-price">89 990 ₽</div>
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Промышленный контроллер">
+                        <div class="product-badge">Инженерный</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Оборудование</div>
+                        <h3 class="product-title">Промышленный контроллер DAZ-3000</h3>
+                        <p class="product-description">Модульный контроллер для автоматизации производственных процессов с расширенными возможностями</p>
+                        <div class="product-footer">
+                            <div class="product-price">124 500 ₽</div>
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Мобильное приложение">
+                        <div class="eco-badge">Эко-технология</div>
+                        <div class="product-badge">IT решение</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Мобильное приложение</div>
+                        <h3 class="product-title">Бизнес-аналитика на мобильных устройствах</h3>
+                        <p class="product-description">Приложение для анализа бизнес-показателей в реальном времени с поддержкой всех платформ</p>
+                        <div class="product-footer">
+                            <div class="product-price">67 800 ₽</div>
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581093458799-ef6e31e37778?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Система мониторинга">
+                        <div class="eco-badge">Эко-технология</div>
+                        <div class="product-badge">Инженерный</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">IoT решение</div>
+                        <h3 class="product-title">Система промышленного мониторинга</h3>
+                        <p class="product-description">Комплексный IoT-мониторинг оборудования с прогнозной аналитикой и оповещениями</p>
+                        <div class="product-footer">
+                            <div class="product-price">215 000 ₽</div>
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами для обсуждения вашего проекта или получения консультации</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Наши контакты</h3>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Адрес</h4>
+                                <p>г. Москва, ул. Технологическая, д. 42, офис 310</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Телефон</h4>
+                                <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@dazdividez.ru">info@dazdividez.ru</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Часы работы</h4>
+                                <p>Пн-Пт: 9:00 - 18:00<br>Сб-Вс: выходной</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Напишите нам</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Ваш Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Ваш телефон">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Ваше сообщение" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>О компании</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Dazdividez - лидер в разработке IT-решений и инженерных инноваций. Создаем будущее технологий сегодня.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Главная</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> О компании</a></li>
+                        <li><a href="#sectors"><i class="fas fa-chevron-right"></i> Сектора</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> Магазин</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Наши сектора</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> IT решения</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Инженерные проекты</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Веб-разработка</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Мобильные приложения</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Промышленная автоматизация</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Подписка</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Подпишитесь на наши новости и узнавайте первыми о новых продуктах и технологиях</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Ваш Email" style="width: 100%; padding: 0.7rem; border-radius: 5px; border: none; background: rgba(255,255,255,0.1); color: white;">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Dazdividez. Все права защищены. Разработка и инженерия будущего.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+        
+        // Product Filter
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // In a real implementation, this would filter products
+                // For this demo, we'll just show a message
+                console.log('Filtering by: ' + this.textContent);
+            });
+        });
+        
+        // Add to Cart
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('.product-title').textContent;
+                
+                // Show notification
+                const notification = document.createElement('div');
+                notification.innerHTML = `
+                    <div style="position: fixed; bottom: 20px; right: 20px; background: var(--secondary); color: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 10000; display: flex; align-items: center;">
+                        <i class="fas fa-check-circle" style="margin-right: 10px; font-size: 1.2rem;"></i>
+                        <span>Товар "${productName}" добавлен в корзину!</span>
+                    </div>
+                `;
+                document.body.appendChild(notification);
+                
+                // Remove notification after 3 seconds
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+                
+                // Animation
+                this.style.backgroundColor = 'var(--green-dark)';
+                setTimeout(() => {
+                    this.style.backgroundColor = '';
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
